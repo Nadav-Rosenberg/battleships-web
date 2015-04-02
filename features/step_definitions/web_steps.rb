@@ -7,5 +7,25 @@ When(/^I follow "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see "([^"]*)"$/) do |arg1|
-  expect(page).to have_content "What's your name?"
+  expect(page).to have_content "What is your name?"
+end
+
+Given(/^I'm on the registration$/) do
+  visit '/registration'
+end
+
+When(/^I input my "([^"]*)"$/) do |arg1|
+  fill_in(arg1, :with => 'Bob')
+end
+
+When(/^I input_two my "([^"]*)"$/) do |arg1|
+  fill_in(arg1, :with => '9')
+end
+
+When(/^I input_three my "([^"]*)"$/) do |arg1|
+  fill_in(arg1, :with => '1')
+end
+
+Then(/^I should be on the "([^"]*)"$/) do |arg1|
+  expect(page).to have_content 'Welcome Bob'
 end
