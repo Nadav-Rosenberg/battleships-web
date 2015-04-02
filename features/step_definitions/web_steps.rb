@@ -7,6 +7,5 @@ When(/^I follow "([^"]*)"$/) do |arg1|
 end
 
 Then(/^I should see "([^"]*)"$/) do |arg1|
-  page.has_content? "What's your name?"
-  save_and_open_page
+  expect(page).to have_content "What's your name?"
 end
