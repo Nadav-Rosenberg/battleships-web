@@ -14,8 +14,6 @@ Given(/^I'm on the registration$/) do
   visit '/registration'
 end
 
-
-
 When(/^I click "([^"]*)"$/) do |arg1|
   click_button arg1
 end
@@ -35,3 +33,6 @@ end
 When(/^I input "([^"]*)" into the "([^"]*)" field$/) do |arg1, arg2|
   fill_in(arg2, :with => arg1)
 end
+
+Capybara.session_name = :phoebe
+p Capybara.session_name

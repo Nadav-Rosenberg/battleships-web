@@ -20,5 +20,3 @@ Scenario: Registration error
   When I input "" into the "name" field
   And I click "Submit"
   Then I should see "There is no name"
-  
-
