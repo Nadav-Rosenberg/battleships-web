@@ -34,6 +34,18 @@ Then(/^I should be on the "([^"]*)"$/) do |arg1|
   expect(page).to have_content 'Welcome Bob'
 end
 
+When(/^the "([^"]*)" field is empty$/) do |arg1|
+  fill_in(arg1, :with => nil)
+end
+
+Then(/^I should see_a "([^"]*)"$/) do |arg1|
+  expect(page).to have_content arg1
+end
+
+
+
+
+
 Given(/^I'm on the game_page$/) do
   
 end
