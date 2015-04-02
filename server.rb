@@ -2,7 +2,7 @@ require 'sinatra/base'
 
 class BattleShips < Sinatra::Base
   get '/' do
-    'Hello BattleShips!'
+    erb :homepage
   end
 
   # start the server if ruby file executed directly

@@ -1,0 +1,12 @@
+Given(/^I am on the homepage$/) do
+  visit '/'
+end
+
+When(/^I follow "([^"]*)"$/) do |arg1|
+  click_link arg1
+end
+
+Then(/^I should see "([^"]*)"$/) do |arg1|
+  page.has_content? "What's your name?"
+  save_and_open_page
+end
