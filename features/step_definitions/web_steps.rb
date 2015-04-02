@@ -26,6 +26,22 @@ When(/^I input_three my "([^"]*)"$/) do |arg1|
   fill_in(arg1, :with => '1')
 end
 
+When(/^I click "([^"]*)"$/) do |arg1|
+  click_button "Submit"
+end
+
 Then(/^I should be on the "([^"]*)"$/) do |arg1|
   expect(page).to have_content 'Welcome Bob'
+end
+
+Given(/^I'm on the game_page$/) do
+  
+end
+
+When(/^the board size is "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
+end
+
+Then(/^I should see_b "([^"]*)"$/) do |arg1|
+  pending # Write code here that turns the phrase above into concrete actions
 end
