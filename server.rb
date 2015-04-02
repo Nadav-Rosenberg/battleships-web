@@ -11,16 +11,16 @@ class BattleShips < Sinatra::Base
   end
 
   post '/game_page' do
-    p params
+    @errors = []
     @name = params[:name]
-    if @name == ""
-      @error = "name"
-      erb :error
-    else
+    @board_size = params[:board_size]
+    @number_of_ships = params[:number_of_ships]
+    @errors << "There is no name" if @name.empty?
+    @errors << "Board size is missing" if @board_size.empty?
+    @errors << "Number of ships is missing" if @number_of_ships.empty?
+    return erb :registration if !@errors.empty? 
       erb :game_page
-    end
   end
 
-  # start the server if ruby file executed directly
   run! if app_file == $0
 end

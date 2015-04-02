@@ -9,21 +9,16 @@ Scenario: Registering
   Then I should see "What is your name?"
 
   Given I'm on the registration page   
-  When I input my "name" 
-  And I input_two my "board_size"
-  And I input_three my "number_of_ships"
+  When I input "Bob" into the "name" field
+  And I input "9" into the "board_size" field
+  And I input "1" into the "number_of_ships" field
   And I click "Submit"
-  Then I should be on the "game_page" 
+  Then I should see "Welcome Bob" 
 
 Scenario: Registration error
   Given I'm on the registration page
-  When "name" field is empty
+  When I input "" into the "name" field
   And I click "Submit"
-  Then I should see_a "Please make sure you fill in all of the fields"
-  When "board_size" field is empty
-  And I click "Submit"
-  Then I should see_b "Please make sure you fill in all of the fields"
-  When "number_of_ships" field is empty
-  And I click "Submit"
-  Then I should see_c "Please make sure you fill in all of the fields"
+  Then I should see "There is no name"
+  
 

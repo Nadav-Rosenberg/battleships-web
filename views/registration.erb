@@ -1,3 +1,11 @@
+<% if @errors %>
+  <ul> 
+    <%@errors.each do |error| %>
+      <li><%= error %> </li>
+    <%end%>
+  </ul>
+<% end %> 
+
 <form action='/game_page' method="post">
   What is your name?: 
   <input type="text" name="name" placeholder="e.g John">
