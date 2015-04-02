@@ -34,26 +34,7 @@ Then(/^I should be on the "([^"]*)"$/) do |arg1|
   expect(page).to have_content 'Welcome Bob'
 end
 
-When(/^the "([^"]*)" field is empty$/) do |arg1|
-  fill_in(arg1, :with => nil)
+Given(/^I'm on the registration page$/) do
+  visit '/registration'
 end
 
-Then(/^I should see_a "([^"]*)"$/) do |arg1|
-  expect(page).to have_content arg1
-end
-
-
-
-
-
-Given(/^I'm on the game_page$/) do
-  
-end
-
-When(/^the board size is "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
-
-Then(/^I should see_b "([^"]*)"$/) do |arg1|
-  pending # Write code here that turns the phrase above into concrete actions
-end
